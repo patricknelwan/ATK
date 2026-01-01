@@ -1,44 +1,179 @@
 @import "tailwindcss";
 
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Layout */
+.app-container {
+  @apply min-h-screen py-8 px-4;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.app-content {
+  @apply max-w-4xl mx-auto;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Header */
+.app-header {
+  @apply text-center mb-8;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.app-title {
+  @apply text-4xl font-bold text-black mb-2;
 }
 
+/* Cards */
 .card {
-  padding: 2em;
+  @apply bg-white rounded-xl shadow-md p-6 mb-6 border border-gray-200;
 }
 
-.read-the-docs {
-  color: #888;
+/* Error Alert */
+.error-alert {
+  @apply bg-white border border-black text-black px-4 py-3 rounded-lg mb-6;
+}
+
+/* Loading Spinner */
+.loading-container {
+  @apply flex items-center justify-center py-12;
+}
+
+.spinner {
+  @apply animate-spin rounded-full h-10 w-10 border-4 border-black border-t-transparent;
+}
+
+/* Form Styles */
+.form-title {
+  @apply text-xl font-semibold text-black mb-4 flex items-center gap-2;
+}
+
+.form-grid {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-4;
+}
+
+.form-group {
+  @apply mb-4;
+}
+
+.form-label {
+  @apply block text-sm font-medium text-black mb-1;
+}
+
+.form-input {
+  @apply w-full px-4 py-2.5 border border-gray-300 rounded-lg outline-none;
+  @apply transition-all duration-200;
+}
+
+.form-input:focus {
+  @apply ring-2 ring-black border-transparent;
+}
+
+.form-actions {
+  @apply flex gap-3 pt-2;
+}
+
+.btn-primary {
+  @apply px-6 py-2.5 text-white font-medium rounded-lg;
+  @apply transition-all duration-200;
+  background: black;
+}
+
+.btn-primary:hover {
+  background: #333;
+}
+
+.btn-secondary {
+  @apply px-6 py-2.5 bg-white text-black font-medium rounded-lg border border-black;
+  @apply transition-all duration-200;
+}
+
+.btn-secondary:hover {
+  @apply bg-gray-100;
+}
+
+/* Table Styles */
+.table-container {
+  @apply overflow-x-auto;
+}
+
+.data-table {
+  @apply w-full;
+}
+
+.table-header-row {
+  @apply border-b-2 border-black;
+}
+
+.table-header {
+  @apply text-left py-3 px-4 font-semibold text-black;
+}
+
+.table-header-center {
+  @apply text-center py-3 px-4 font-semibold text-black;
+}
+
+.table-row {
+  @apply border-b border-gray-200 transition-colors duration-150;
+}
+
+.table-row:hover {
+  @apply bg-gray-100;
+}
+
+.table-row-alt {
+  @apply bg-gray-50;
+}
+
+.table-cell {
+  @apply py-3 px-4;
+}
+
+.table-cell-id {
+  @apply py-3 px-4 text-gray-600 font-mono text-sm;
+}
+
+.table-cell-name {
+  @apply py-3 px-4 text-black font-medium;
+}
+
+.badge-purple {
+  @apply inline-block px-3 py-1 bg-gray-100 text-black rounded-full text-sm border border-gray-300;
+}
+
+.badge-blue {
+  @apply inline-block px-3 py-1 bg-black text-white rounded-full text-sm font-medium;
+}
+
+.table-actions {
+  @apply flex justify-center gap-2;
+}
+
+.btn-edit {
+  @apply px-3 py-1.5 bg-white text-black border border-black rounded-lg text-sm font-medium;
+  @apply transition-colors duration-150;
+}
+
+.btn-edit:hover {
+  @apply bg-gray-100;
+}
+
+.btn-delete {
+  @apply px-3 py-1.5 bg-black text-white rounded-lg text-sm font-medium;
+  @apply transition-colors duration-150;
+}
+
+.btn-delete:hover {
+  background: #333;
+}
+
+/* Empty State */
+.empty-state {
+  @apply text-center py-12;
+}
+
+.empty-state-icon {
+  @apply text-6xl mb-4;
+}
+
+.empty-state-title {
+  @apply text-black text-lg;
+}
+
+.empty-state-subtitle {
+  @apply text-gray-500 text-sm;
 }
